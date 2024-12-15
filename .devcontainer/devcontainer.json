@@ -43,10 +43,18 @@
 			"extensions": [
 				"ms-azuretools.vscode-docker",
 				"Nuxtr.nuxt-vscode-extentions",
-				"xabikos.JavaScriptSnippets"
+				"xabikos.JavaScriptSnippets",
+				"vivaxy.vscode-conventional-commits",
+				"usernamehw.errorlens",
+				"redhat.vscode-yaml",
+				"shardulm94.trailing-spaces",
+				"Gruntfuggly.todo-tree",
+				"kisstkondoros.vscode-gutter-preview",
+				"bradlc.vscode-tailwindcss"
 			],
 			"settings": {
-				"editor.gotoLocation.multipleDefinitions": "goto"
+				"editor.gotoLocation.multipleDefinitions": "goto",
+				"editor.formatOnSave": true
 			}
 		}
 	}
