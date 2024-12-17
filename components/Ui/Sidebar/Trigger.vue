@@ -43,6 +43,7 @@
     {
       icon: "lucide:panel-left",
       label: "Toggle Sidebar",
+      class: null,
     }
   );
 
