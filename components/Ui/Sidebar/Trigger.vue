@@ -15,10 +15,10 @@
 </template>
 
 <script lang="ts">
-  import type { HTMLAttributes } from "vue";
+  import type { HTMLAttributes } from 'vue';
 
   export const sideBarTriggerStyles = tv({
-    base: "size-7",
+    base: 'size-7',
   });
 </script>
 
@@ -33,7 +33,7 @@
       /**
        * Additional classes to apply to the parent element.
        */
-      class?: HTMLAttributes["class"];
+      class?: HTMLAttributes['class'];
       /**
        * The label for the trigger.
        * @default "Toggle Sidebar"
@@ -41,8 +41,8 @@
       label?: string;
     }>(),
     {
-      icon: "lucide:panel-left",
-      label: "Toggle Sidebar",
+      icon: 'lucide:panel-left',
+      label: 'Toggle Sidebar',
       class: null,
     }
   );
