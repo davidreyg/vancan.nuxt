@@ -70,7 +70,7 @@
   const submit = handleSubmit(async (values, { setFieldError }) => {
     await signIn(values, { callbackUrl: '/', redirect: true })
       .then(() => {
-        useSonner(t('login.notification_title'), {
+        useSonner.success(t('login.notification_title'), {
           description: t('login.notification_description'),
         });
       })
