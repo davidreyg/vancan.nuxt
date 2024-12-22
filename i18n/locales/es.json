@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title": "Iniciar Sesión",
+    "subtitle": "Introduzca sus credenciales",
+    "notification_title": "¡Inicio de sesión correcto!",
+    "notification_description": "Bienvenido."
+  },
+  "fields": {
+    "username": "Nombre de usuario",
+    "password": "Contraseña"
+  },
+  "words": {
+    "hello": "Hola"
+  }
+}

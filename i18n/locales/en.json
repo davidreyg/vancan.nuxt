@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title": "Log in",
+    "subtitle": "Enter your name & password to log in.",
+    "notification_title": "Logged in successfully!",
+    "notification_description": "You have successfully logged in."
+  },
+  "fields": {
+    "username": "Username",
+    "password": "Password"
+  },
+  "words": {
+    "hello": "Hello"
+  }
+}
