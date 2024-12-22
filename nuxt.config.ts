@@ -60,6 +60,9 @@ export default defineNuxtConfig({
         dataType: {
           id: 'number',
           username: 'string',
+          nombre_completo: 'string',
+          is_superuser: 'boolean',
+          groups_object: '{id:number,name:string,permissions:[]}[]',
         },
       },
       type: 'local',
