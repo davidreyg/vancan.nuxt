@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: env.NODE_ENV === 'development' },
   nitro: {
     devProxy: {
-      '/api': {
+      '/apisxd': {
         target: 'http://vancan.dev:8000/',
         changeOrigin: true,
       },
