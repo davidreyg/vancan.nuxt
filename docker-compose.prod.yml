@@ -1,8 +1,8 @@
 services:
   vancan.nuxt:
     build:
-      context: ./docker/
-      dockerfile: Dockerfile.prod
+      context: .
+      dockerfile: docker/Dockerfile.prod
     container_name: vancan.nuxt
     # command: sleep infinity
     env_file:
