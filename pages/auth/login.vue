@@ -67,11 +67,16 @@
     validationSchema: LoginSchema,
   });
 
-  const submit = handleSubmit(async (values) => {
-    await signIn(values, { callbackUrl: '/', redirect: true });
-    useSonner(t('login.notification_title'), {
-      description: t('login.notification_description'),
-    });
+  const submit = handleSubmit(async (values, { setFieldError }) => {
+    await signIn(values, { callbackUrl: '/', redirect: true })
+      .then(() => {
+        useSonner(t('login.notification_title'), {
+          description: t('login.notification_description'),
+        });
+      })
+      .catch((err) => {
+        setFieldError('username', err.response._data.non_field_errors[0]);
+      });
   });
 
   const option = ref<'es' | 'en'>(locale.value);

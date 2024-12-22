@@ -84,23 +84,27 @@
       <UiNavbar sticky>
         <UiContainer class="flex h-12 items-center justify-between">
           <UiSidebarTrigger />
-          <Icon name="circle-flags:es" />
-          <div class="flex items-center">
-            <div v-if="data">{{ $t('words.hello') }} {{ data.username }}</div>
-            <UiSelect v-model="option">
-              <UiSelectTrigger placeholder="Select an option" />
-              <UiSelectContent>
-                <UiSelectGroup>
-                  <UiSelectItem
-                    v-for="(l, i) in locales"
-                    :key="i"
-                    :value="l.code"
-                    :text="l.name"
-                    :icon="l.code === 'en' ? 'circle-flags:us' : 'circle-flags:es'"
-                  />
-                </UiSelectGroup>
-              </UiSelectContent>
-            </UiSelect>
+          <div class="flex items-center gap-x-4">
+            <div v-if="data" class="flex-auto">
+              <span class="font-bold">{{ $t('words.hello') }} </span>{{}}
+              <span class="italic"> {{ data.username }}</span>
+            </div>
+            <div>
+              <UiSelect v-model="option">
+                <UiSelectTrigger placeholder="Select an option" />
+                <UiSelectContent>
+                  <UiSelectGroup>
+                    <UiSelectItem
+                      v-for="(l, i) in locales"
+                      :key="i"
+                      :value="l.code"
+                      :text="l.name"
+                      :icon="l.code === 'en' ? 'circle-flags:us' : 'circle-flags:es'"
+                    />
+                  </UiSelectGroup>
+                </UiSelectContent>
+              </UiSelect>
+            </div>
           </div>
         </UiContainer>
       </UiNavbar>
