@@ -1,16 +1,20 @@
 <template>
   <UiSidebarProvider v-slot="{ isMobile }">
     <UiSidebar>
-      <UiSidebarContent>
+      <UiSidebarHeader>
+        <NuxtLink to="/" class="flex w-full items-center">
+          <UiAvatar src="/logo.png" alt="Company Logo" class="h-20 w-full object-contain" />
+        </NuxtLink>
+      </UiSidebarHeader>
+      <UiSidebarContent class="mt-6">
         <UiSidebarGroup>
-          <UiSidebarGroupLabel label="XD" />
           <UiSidebarGroupContent>
             <UiSidebarMenu>
               <UiSidebarMenuItem v-for="item in items" :key="item.title">
                 <UiSidebarMenuButton as-child>
                   <a :href="item.url">
-                    <Icon :name="item.icon" />
-                    <span>{{ item.title }}</span>
+                    <Icon :name="item.icon" size="20px" />
+                    <span class="text-lg">{{ item.title }}</span>
                   </a>
                 </UiSidebarMenuButton>
               </UiSidebarMenuItem>
@@ -30,11 +34,17 @@
                   class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                 >
                   <UiAvatar class="size-8 rounded-lg">
-                    <UiAvatarFallback class="rounded-lg">BB</UiAvatarFallback>
+                    <UiAvatarFallback class="rounded-lg">{{
+                      data?.nombre_completo
+                        .split(' ')
+                        .map((word) => word.charAt(0).toLowerCase())
+                        .join('')
+                        .toUpperCase()
+                    }}</UiAvatarFallback>
                   </UiAvatar>
                   <div class="grid flex-1 text-left text-sm leading-tight">
-                    <span class="truncate font-semibold">David rey</span>
-                    <span class="truncate text-xs">dav@gmail.com</span>
+                    <span class="truncate font-semibold">{{ data?.nombre_completo }}</span>
+                    <span class="truncate text-xs">{{ data?.groups_object[0].name }}</span>
                   </div>
                   <Icon name="lucide:chevrons-up-down" class="ml-auto size-4" />
                 </UiSidebarMenuButton>
@@ -49,11 +59,17 @@
                   <div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                     <UiAvatar class="size-8 rounded-lg">
                       <!-- <UiAvatarImage :src="data.user.avatar" :alt="data.user.name" /> -->
-                      <UiAvatarFallback class="rounded-lg">DR</UiAvatarFallback>
+                      <UiAvatarFallback class="rounded-lg">{{
+                        data?.nombre_completo
+                          .split(' ')
+                          .map((word) => word.charAt(0).toLowerCase())
+                          .join('')
+                          .toUpperCase()
+                      }}</UiAvatarFallback>
                     </UiAvatar>
                     <div class="grid flex-1 text-left text-sm leading-tight">
-                      <span class="truncate font-semibold">David Rey</span>
-                      <span class="truncate text-xs">dav@gmail.com</span>
+                      <span class="truncate font-semibold">{{ data?.nombre_completo }}</span>
+                      <span class="truncate text-xs">{{ data?.groups_object[0].name }}</span>
                     </div>
                   </div>
                 </UiDropdownMenuLabel>
@@ -71,7 +87,7 @@
                 <UiDropdownMenuSeparator />
                 <UiDropdownMenuItem
                   icon="lucide:log-out"
-                  title="Log out"
+                  :title="$t('words.logout')"
                   @click="() => signOut({ callbackUrl: '/auth/login' })"
                 />
               </UiDropdownMenuContent>
@@ -84,8 +100,8 @@
       <UiNavbar sticky>
         <UiContainer class="flex h-12 items-center justify-between">
           <UiSidebarTrigger />
-          <div class="flex items-center gap-x-4">
-            <div v-if="data" class="flex-auto">
+          <div class="flex items-center gap-x-2">
+            <div v-if="data" class="">
               <span class="font-bold">{{ $t('words.hello') }} </span>{{}}
               <span class="italic"> {{ data.username }}</span>
             </div>
@@ -105,6 +121,15 @@
                 </UiSelectContent>
               </UiSelect>
             </div>
+            <div>
+              <UiButton
+                size="icon"
+                variant="ghost"
+                @click="() => signOut({ callbackUrl: '/auth/login' })"
+              >
+                <Icon class="size-4" name="lucide:log-out" />
+              </UiButton>
+            </div>
           </div>
         </UiContainer>
       </UiNavbar>
@@ -116,13 +141,7 @@
 </template>
 <script lang="ts" setup>
   // Menu items.
-  const items = [
-    { title: 'Home', url: '#', icon: 'lucide:home' },
-    { title: 'Inbox', url: '#', icon: 'lucide:inbox' },
-    { title: 'Calendar', url: '#', icon: 'lucide:calendar' },
-    { title: 'Search', url: '#', icon: 'lucide:search' },
-    { title: 'Settings', url: '#', icon: 'lucide:settings' },
-  ];
+  const items = [{ title: 'Mascotas', url: '/mascotas', icon: 'lucide:dog' }];
 
   const { signOut, data } = useAuth();
   const { locales, setLocale, locale } = useI18n();
