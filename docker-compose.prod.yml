@@ -1,18 +1,18 @@
 services:
   vancan.nuxt:
     build:
-      context: .
-      dockerfile: docker/Dockerfile.dev
+      context: ./docker/
+      dockerfile: Dockerfile.prod
     container_name: vancan.nuxt
-    command: sleep infinity
+    # command: sleep infinity
     env_file:
       - .env
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     ports:
       - '3000:3000'
-    volumes:
-      - '.:/app'
+    # volumes:
+    #   - '.:/app'
 networks:
   default:
     external: true
