@@ -52,7 +52,7 @@ export default defineNuxtConfig({
   },
   auth: {
     globalAppMiddleware: true,
-    baseURL: 'http://localhost:3000/api/',
+    baseURL: env.NUXT_PUBLIC_AUTH_URL,
     // baseURL: process.env.NUXT_PUBLIC_API_URL,
     // disableInternalRouting: true,x|
     provider: {
