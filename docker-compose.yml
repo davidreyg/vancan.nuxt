@@ -1,0 +1,17 @@
+services:
+  vancan.nuxt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vancan.nuxt
+    command: sleep infinity
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/app'
+networks:
+  default:
+    external: true
+    name: proxygratis

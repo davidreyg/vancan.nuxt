@@ -3,9 +3,9 @@
 {
   "name": "Node.js & TypeScript",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "build": {
-    "dockerfile": "../Dockerfile"
-  },
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "vancan.nuxt",
+  "workspaceFolder": "/app",
   "features": {
     "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
     "ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {
@@ -47,7 +47,8 @@
         "kisstkondoros.vscode-gutter-preview",
         "bradlc.vscode-tailwindcss",
         "Vue.volar",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "Lokalise.i18n-ally"
       ],
       "settings": {
         "editor.gotoLocation.multipleDefinitions": "goto",
@@ -59,7 +60,9 @@
         "scss.lint.unknownAtRules": "ignore",
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "eslint.format.enable": true,
-        "prettier.useEditorConfig": false
+        "prettier.useEditorConfig": false,
+        "i18n-ally.localesPaths": ["i18n", "i18n/locales"],
+        "i18n-ally.keystyle": "flat"
       }
     }
   }
