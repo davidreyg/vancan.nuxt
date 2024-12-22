@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   nitro: {
     devProxy: {
       '/api': {
-        target: 'http://0.0.0.0:8000/',
+        target: 'http://vancan.dev:8000/',
         changeOrigin: true,
       },
     },
