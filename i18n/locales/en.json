@@ -7,10 +7,21 @@
   },
   "fields": {
     "username": "Username",
-    "password": "Password"
+    "password": "Password",
+    "name": "Name",
+    "gender": "Gender",
+    "color": "Color",
+    "breed": "Breed",
+    "hobbies": "Hobbies",
+    "lost": "Lost",
+    "feeding": "Feeding",
+    "photo": "Photo",
+    "id": "ID"
   },
   "words": {
     "hello": "Hello",
-    "logout": "Log Out"
+    "logout": "Log Out",
+    "save": "Save",
+    "cancel": "Cancel"
   }
 }

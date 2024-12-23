@@ -7,10 +7,21 @@
   },
   "fields": {
     "username": "Nombre de usuario",
-    "password": "Contraseña"
+    "password": "Contraseña",
+    "name": "Nombre",
+    "gender": "Sexo",
+    "color": "Color",
+    "breed": "Raza",
+    "hobbies": "Hobbies",
+    "lost": "Perdido",
+    "feeding": "Alimentacion",
+    "photo": "Foto",
+    "id": "Identificador"
   },
   "words": {
     "hello": "Hola",
-    "logout": "Cerrar Sesión"
+    "logout": "Cerrar Sesión",
+    "save": "Guardar",
+    "cancel": "Cancelar"
   }
 }

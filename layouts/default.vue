@@ -133,8 +133,8 @@
           </div>
         </UiContainer>
       </UiNavbar>
-      <UiContainer class="flex h-12 items-center">
-        <slot />
+      <UiContainer class="flex items-center">
+        <div class="mt-6 h-full w-full"><slot /></div>
       </UiContainer>
     </UiSidebarInset>
   </UiSidebarProvider>
