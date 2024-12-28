@@ -1,13 +1,13 @@
 export default {
-  "nuxtVersion": 3,
-  "theme": "blue",
-  "tailwindCSSLocation": "assets/css/tailwind.css",
-  "tailwindConfigLocation": "tailwind.config.js",
-  "componentsLocation": "components/Ui",
-  "composablesLocation": "composables",
-  "pluginsLocation": "plugins",
-  "utilsLocation": "utils",
-  "force": true,
-  "useDefaultFilename": true,
-  "packageManager": "bun"
-}
+  nuxtVersion: 4,
+  theme: 'blue',
+  tailwindCSSLocation: 'app/assets/css/tailwind.css',
+  tailwindConfigLocation: 'tailwind.config.js',
+  componentsLocation: 'app/components/Ui',
+  composablesLocation: 'app/composables',
+  pluginsLocation: 'app/plugins',
+  utilsLocation: 'app/utils',
+  force: true,
+  useDefaultFilename: true,
+  packageManager: 'bun',
+};

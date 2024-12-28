@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const env = process.env;
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2024-12-28',
+  future: {
+    compatibilityVersion: 4,
+  },
+
   devtools: { enabled: env.NODE_ENV === 'development' },
   nitro: {
     devProxy: {
@@ -11,6 +15,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   runtimeConfig: {
     public: {
       appUrl: env.NUXT_PUBLIC_APP_URL,
@@ -31,11 +36,13 @@ export default defineNuxtConfig({
     '@morev/vue-transitions/nuxt',
     '@nuxtjs/i18n',
   ],
+
   icon: {
     serverBundle: {
       collections: ['circle-flags'],
     },
   },
+
   i18n: {
     locales: [
       { code: 'en', iso: 'en-US', name: 'English', file: 'en.json' },
@@ -43,13 +50,12 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'es',
     strategy: 'no_prefix',
-    langDir: 'locales/',
     lazy: false,
-    vueI18n: './i18n/i18n.config.ts',
     experimental: {
       typedOptionsAndMessages: 'all',
     },
   },
+
   auth: {
     globalAppMiddleware: true,
     baseURL: env.NUXT_PUBLIC_AUTH_URL,
