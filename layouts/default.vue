@@ -12,10 +12,10 @@
             <UiSidebarMenu>
               <UiSidebarMenuItem v-for="item in items" :key="item.title">
                 <UiSidebarMenuButton as-child>
-                  <a :href="item.url">
+                  <NuxtLink :to="item.url">
                     <Icon :name="item.icon" size="20px" />
-                    <span class="text-lg">{{ item.title }}</span>
-                  </a>
+                    <span>{{ item.title }}</span>
+                  </NuxtLink>
                 </UiSidebarMenuButton>
               </UiSidebarMenuItem>
             </UiSidebarMenu>
@@ -141,7 +141,10 @@
 </template>
 <script lang="ts" setup>
   // Menu items.
-  const items = [{ title: 'Mascotas', url: '/mascotas', icon: 'lucide:dog' }];
+  const items = [
+    { title: 'Mascotas', url: '/mascotas', icon: 'lucide:dog' },
+    { title: 'Vacunados por RIS', url: '/reportes/vacunados-por-ris', icon: 'lucide:syringe' },
+  ];
 
   const { signOut, data } = useAuth();
   const { locales, setLocale, locale } = useI18n();

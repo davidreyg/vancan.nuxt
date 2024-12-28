@@ -2,7 +2,7 @@
   <div class="">
     <div class="text-lg">Mis mascotas</div>
 
-    <div class="flex flex-col justify-between gap-5 md:flex-row md:items-center">
+    <div class="mt-24 flex flex-col justify-between gap-5 md:flex-row md:items-center">
       <UiInput v-model="search" type="search" placeholder="Search" class="w-full md:w-96" />
       <UiDropdownMenu>
         <UiDropdownMenuTrigger as-child>
