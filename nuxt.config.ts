@@ -5,6 +5,12 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  app: {
+    head: {
+      title: 'Inicio',
+      titleTemplate: '%s - Vacuna Can',
+    },
+  },
   extends: ['layers/auth'],
   devtools: { enabled: env.NODE_ENV === 'development' },
   nitro: {

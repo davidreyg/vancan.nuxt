@@ -7,7 +7,7 @@
       <p class="mt-1 text-muted-foreground">{{ $t('login.subtitle') }}</p>
       <div>
         <UiSelect v-model="option">
-          <UiSelectTrigger placeholder="Select an option" />
+          <UiSelectTrigger :placeholder="$t('words.select_option')" />
           <UiSelectContent>
             <UiSelectGroup>
               <UiSelectItem v-for="(l, i) in locales" :key="i" :value="l.code" :text="l.name" />
@@ -53,8 +53,8 @@
   });
 
   useSeoMeta({
-    title: t('login.title'),
-    description: t('login.subtitle'),
+    title: computed(() => t('login.title')),
+    description: computed(() => t('login.subtitle')),
   });
 
   const { signIn } = useAuth();

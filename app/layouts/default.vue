@@ -107,7 +107,7 @@
             </div>
             <div>
               <UiSelect v-model="option">
-                <UiSelectTrigger placeholder="Select an option" />
+                <UiSelectTrigger :placeholder="$t('words.select_option')" />
                 <UiSelectContent>
                   <UiSelectGroup>
                     <UiSelectItem
@@ -141,13 +141,14 @@
 </template>
 <script lang="ts" setup>
   // Menu items.
-  const items = [
-    { title: 'Mascotas', url: '/mascotas', icon: 'lucide:dog' },
+  const { locales, setLocale, locale, t } = useI18n();
+  const items = computed(() => [
+    { title: t('pages.pet.title', 2), url: '/mascotas', icon: 'lucide:dog' },
     { title: 'Vacunados por RIS', url: '/reportes/vacunados-por-ris', icon: 'lucide:syringe' },
-  ];
+  ]);
 
   const { signOut, data } = useAuth();
-  const { locales, setLocale, locale } = useI18n();
+
   const option = ref<'es' | 'en'>(locale.value);
 
   // Observa los cambios en `option.value`

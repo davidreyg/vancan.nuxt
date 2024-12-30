@@ -150,6 +150,11 @@
   import type { ColumnDef, Table } from '@tanstack/vue-table';
   import type { InferType } from 'yup';
 
+  const { t } = useI18n();
+  useSeoMeta({
+    title: computed(() => t('pages.pet.title', 2)),
+    description: () => t('pages.pet.description'),
+  });
   const { data } = await useApiLazy<PaginatedResponse<Mascota[]>>('api/mascotas/', {
     server: false,
     query: { page_size: 1000, usuario: 'demo' },

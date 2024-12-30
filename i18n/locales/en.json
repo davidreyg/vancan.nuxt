@@ -22,6 +22,17 @@
     "hello": "Hello",
     "logout": "Log Out",
     "save": "Save",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "select_option": "Select an option"
+  },
+  "pages": {
+    "home": {
+      "title": "Home",
+      "description": "Home Page"
+    },
+    "pet": {
+      "title": "Pet | Pets",
+      "description": "Manage and customize pets"
+    }
   }
 }

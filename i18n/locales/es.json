@@ -22,6 +22,17 @@
     "hello": "Hola",
     "logout": "Cerrar Sesión",
     "save": "Guardar",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "select_option": "Seleccione una opción"
+  },
+  "pages": {
+    "home": {
+      "title": "Inicio",
+      "description": "Página de Inicio"
+    },
+    "pet": {
+      "title": "Mascota | Mascotas",
+      "description": "Gestión de mascotas"
+    }
   }
 }
