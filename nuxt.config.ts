@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-
+  extends: ['layers/auth'],
   devtools: { enabled: env.NODE_ENV === 'development' },
   nitro: {
     devProxy: {

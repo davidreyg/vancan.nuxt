@@ -44,7 +44,7 @@
                   </UiAvatar>
                   <div class="grid flex-1 text-left text-sm leading-tight">
                     <span class="truncate font-semibold">{{ data?.nombre_completo }}</span>
-                    <span class="truncate text-xs">{{ data?.groups_object[0].name }}</span>
+                    <span class="truncate text-xs">{{ data?.groups_object[0]?.name }}</span>
                   </div>
                   <Icon name="lucide:chevrons-up-down" class="ml-auto size-4" />
                 </UiSidebarMenuButton>
@@ -69,7 +69,7 @@
                     </UiAvatar>
                     <div class="grid flex-1 text-left text-sm leading-tight">
                       <span class="truncate font-semibold">{{ data?.nombre_completo }}</span>
-                      <span class="truncate text-xs">{{ data?.groups_object[0].name }}</span>
+                      <span class="truncate text-xs">{{ data?.groups_object[0]?.name }}</span>
                     </div>
                   </div>
                 </UiDropdownMenuLabel>

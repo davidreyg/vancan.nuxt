@@ -146,8 +146,8 @@
 
 <script lang="ts" setup>
   import { boolean, mixed, number, object, string } from 'yup';
+  import type { Mascota } from '../../models/mascota';
   import type { ColumnDef, Table } from '@tanstack/vue-table';
-  import type { Mascota } from '~/models/mascota';
   import type { InferType } from 'yup';
 
   const { data } = await useApiLazy<PaginatedResponse<Mascota[]>>('api/mascotas/', {
@@ -179,7 +179,8 @@
       currentAvatarImage.value = defaultAvatar;
       return;
     }
-    const file = files[0];
+    const file = ref() as Ref<File>;
+    file.value = files[0]!;
     const { execute } = useBase64(file);
     currentAvatarImage.value = await execute();
     setFieldValue('photo', file);
